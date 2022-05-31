@@ -1,9 +1,9 @@
 ﻿using Hangfire;
-using hangfire_dotnetcore_demo.Services;
+using dotnetcore5withhangfire.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace hangfire_dotnetcore_demo.Controllers
+namespace dotnetcore5withhangfire.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

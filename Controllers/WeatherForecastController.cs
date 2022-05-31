@@ -1,17 +1,21 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace hangfire_dotnetcore_demo.Controllers
+namespace dotnetcore5withhangfire.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+        public static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        };
 
         private readonly ILogger<WeatherForecastController> _logger;
+
+        public WeatherForecastController()
+        {
+        }
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
@@ -28,6 +32,20 @@ namespace hangfire_dotnetcore_demo.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+            
+        }
+
+        /// <summary>Gets the summary.</summary>
+        /// <param name="a">a.</param>
+        /// <returns>The summary for the given index.</returns>
+        [HttpGet(Name = "GetWeatherForecast-Summary")]
+        public string GetSummary(int a)
+        {
+            if (a > 0 && a < Summaries.Length)
+            {
+                return Summaries.GetValue(a).ToString();
+            }
+            return string.Empty;
         }
     }
 }

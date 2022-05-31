@@ -1,4 +1,4 @@
-﻿namespace hangfire_dotnetcore_demo.Services
+﻿namespace dotnetcore5withhangfire.Services
 {
     public class JobTestService : IJobTestService
     {

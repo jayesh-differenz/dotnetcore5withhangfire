@@ -1,7 +1,7 @@
 ﻿using Hangfire;
 using Microsoft.OpenApi.Models;
 
-namespace hangfire_dotnetcore_demo
+namespace dotnetcore5withhangfire
 {
     public class Startup
     {
